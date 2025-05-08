@@ -32,14 +32,9 @@ A versão atual do código **não aplica Design Patterns**. O desafio do aluno �
 
 1. Clone este repositório:
 
-```bash
-git clone https://github.com/seu-usuario/desafios-diarios.git
-cd desafios-diarios
-```
+2. Importe o projeto em sua IDE favorita (IntelliJ, VS Code...)
 
-2. Importe o projeto em sua IDE favorita (IntelliJ, Eclipse, VS Code...)
-
-3. Rode a aplicação (`DesafiosApplication.java`) ou via terminal:
+3. Rode a aplicação (`App.java`) ou via terminal:
 
 ```bash
 ./mvnw spring-boot:run
