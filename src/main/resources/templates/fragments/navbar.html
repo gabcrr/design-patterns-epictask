@@ -1,0 +1,13 @@
+<nav class="bg-gray-800 p-4 flex justify-between items-center rounded-xl mb-6" th:fragment="navbar">
+    <a href="/" class="text-xl font-semibold text-white flex items-center gap-2">
+        <i data-lucide="list-todo" class="w-6 h-6 text-indigo-400"></i>
+        EPIC TASK
+    </a>
+    <div class="flex items-center gap-4 text-sm text-gray-300">
+        <span th:text="${resumo}">Total de recompensas: 0</span>
+        <a href="/inventario" class="flex items-center gap-1 hover:text-white">
+            <i data-lucide="package-open" class="w-5 h-5"></i>
+            Inventário
+        </a>
+    </div>
+</nav>

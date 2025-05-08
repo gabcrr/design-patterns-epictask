@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="dark">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Inventário</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="bg-gray-900 text-gray-100 p-6 min-h-screen">
+    <div th:replace="fragments/navbar :: navbar"></div>
+
+    <div class="max-w-2xl mx-auto">
+        <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
+            <i data-lucide="package-open" class="text-indigo-400 w-6 h-6"></i>
+            Inventário de Recompensas
+        </h2>
+
+        <ul class="space-y-3">
+            <li th:each="r : ${recompensas}"
+                class="bg-gray-800 p-4 rounded-lg shadow flex justify-between items-center">
+                <span th:text="${r.descricao}">Cristal</span>
+                <span class="text-green-400 font-semibold" th:text="${r.valor} + ' pts'">120 pts</span>
+            </li>
+        </ul>
+
+        <div class="mt-6">
+            <a href="/" class="inline-flex items-center gap-2 text-gray-400 hover:text-white">
+                <i data-lucide="arrow-left" class="w-4 h-4"></i>
+                Voltar
+            </a>
+        </div>
+    </div>
+
+    <script>lucide.createIcons()</script>
+</body>
+
+</html>

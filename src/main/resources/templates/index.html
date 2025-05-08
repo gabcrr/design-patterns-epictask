@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="dark">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Desafios Diários</title>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-900 text-gray-100 min-h-screen p-6">
+    <div th:replace="fragments/navbar :: navbar"></div>
+
+    <div class="max-w-3xl mx-auto">
+        <h1 class="text-3xl font-bold mb-6 text-center text-white flex items-center justify-center gap-2">
+            <i data-lucide="list-todo" class="w-7 h-7 text-indigo-400"></i>
+            Tarefas
+        </h1>
+
+        <div class="text-right mb-4">
+            <a href="/novo"
+                class="inline-flex items-center gap-2 bg-green-600 hover:bg-green-500 text-white px-4 py-2 rounded-lg transition">
+                <i data-lucide="plus-circle" class="w-5 h-5"></i>
+                Nova Tarefa
+            </a>
+        </div>
+
+        <div class="grid gap-4">
+            <div th:each="desafio : ${desafios}"
+                class="bg-gray-800 rounded-xl p-4 shadow-lg flex justify-between items-center">
+                <div>
+                    <h2 class="text-xl font-semibold" th:text="${desafio.titulo}">Título do desafio</h2>
+                    <p class="text-sm text-gray-400 capitalize" th:text="${desafio.tipo}">tipo</p>
+                </div>
+                <form method="post" th:action="@{/concluir}">
+                    <input type="hidden" name="id" th:value="${desafio.id}" />
+                    <button type="submit"
+                        class="group bg-indigo-600 hover:bg-indigo-500 text-white p-2 rounded-full transition relative"
+                        title="Concluir desafio">
+                        <i data-lucide="check" class="w-5 h-5"></i>
+                        <span class="sr-only">Concluir desafio</span>
+                    </button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>
