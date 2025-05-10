@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @Entity
 @Data
 @NoArgsConstructor
-public class RecompensaEstudo implements Recompensa {
+public class RecompensaEstudo extends RecompensaEntity {
     private String descricao = "XP de conhecimento";
     private int valor = 100;
 }
